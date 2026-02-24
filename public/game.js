@@ -344,3 +344,8 @@ document.getElementById('revealContinueBtn').onclick = () => {
   document.getElementById('game').style.display = 'flex';
 };
 
+socket.on('continueGame', () => {
+  document.getElementById('revealScreen').style.display = 'none';
+  document.getElementById('game').style.display = 'flex';
+});
+
