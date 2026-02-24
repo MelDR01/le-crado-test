@@ -20,14 +20,14 @@ let room = {
   state: 'lobby',
   questions: [
     {q:"Tu te laves le visage le matin ?",answers:["Oui","Je mouille juste","Non"],scores:[0,5,10],category:"🚿"},
-    {q:"Après être allé aux toilettes, tu te nettoies comment ?",answers:["Papier seulement","Eau + papier","Bidet ou douche","Je compte pas les coups"],scores:[10,10,0,0],category:"🚿"},
+    {q:"Après un bon caca, tu te nettoies comment ?",answers:["Papier seulement","Eau + papier","Bidet ou douche","Je ne fais rien"],scores:[10,5,0,20],category:"🚿"},
     {q:"Tu te douches après le sport ?",answers:["Toujours","Parfois","Rarement","Jamais"],scores:[0,5,10,15],category:"🚿"},
-    {q:"Sous la douche, tu te laves spécifiquement les jambes ?",answers:["Oui toujours","Parfois","Non l'eau coule ça suffit","Jamais"],scores:[0,5,10,15],category:"🚿"},
-    {q:"Sous la douche, tu te laves spécifiquement les pieds ?",answers:["Oui toujours","Parfois","Non l'eau coule ça suffit","Jamais"],scores:[0,5,10,15],category:"🚿"},
+    {q:"Sous la douche, tu te laves spécifiquement les jambes ?",answers:["Oui toujours","Parfois","Non l'eau coule ça suffit","Jamais"],scores:[0,5,15,15],category:"🚿"},
+    {q:"Sous la douche, tu te laves spécifiquement les pieds ?",answers:["Oui toujours","Parfois","Non l'eau coule ça suffit","Jamais"],scores:[0,5,15,15],category:"🚿"},
     {q:"Tu changes ton pyjama tous les combien ?",answers:["Moins de 3 jours","1 semaine","2 semaines","Je ne le change pas"],scores:[0,5,10,15],category:"🚿"},
-    {q:"As tu déjà sniffer un vêtement pour vérifier sa portabilité ?",answers:["Non jamais","Oui parfois","C'est mon seul critère","Oui et je le mets même si ça sent"],scores:[0,5,10,15],category:"🚿"},
+    {q:"As tu déjà sniffer un vêtement pour vérifier sa portabilité ?",answers:["Non jamais","Oui parfois","C'est mon seul critère","Oui et je préfère quand ça sent"],scores:[0,5,10,15],category:"🚿"},
     {q:"Après avoir fait pipi, tu t'essuies spécifiquement le zizi ?",answers:["Oui toujours","Parfois","Non je secoue","Jamais"],scores:[0,5,10,15],category:"🚿"},
-    {q:"Tu fais le ménage dans ta chambre tous les combien ?",answers:["Cette semaine","Il y a 2-3 semaines","Le mois dernier","Je ne sais plus"],scores:[0,5,10,15],category:"🧼"},
+    {q:"La dernière fois que t'as nettoyé ta piaule ?",answers:["Cette semaine","Il y a 2-3 semaines","Le mois dernier","Je ne sais plus"],scores:[0,5,10,15],category:"🧼"},
     {q:"T'as déjà passé la serpillière chez toi ?",answers:["Oui régulièrement","Oui une fois","Non"],scores:[0,5,15],category:"🧼"},
     {q:"Tu laisses la vaisselle dans l'évier combien de temps ?",answers:["Je la fais juste après","Quelques heures","Quelques jours","Plus"],scores:[0,5,10,15],category:"🧼"},
     {q:"Tu as du linge sale par terre en ce moment ?",answers:["Non","Oui un peu","Oui beaucoup","C'est permanent"],scores:[0,5,10,15],category:"🧼"},
@@ -35,15 +35,15 @@ let room = {
     {q:"Tu te laves les mains en rentrant chez toi ?",answers:["Toujours","Parfois","Quand j'y pense","Jamais"],scores:[0,5,10,15],category:"👐"},
     {q:"T'as déjà soufflé sur un aliment tombé par terre pour le 'désinfecter' puis tu l'as mangé ?",answers:["Non jamais","Oui une fois","Oui souvent","C'est automatique"],scores:[0,5,10,15],category:"👐"},
     {q:"Tu as déjà bu dans un verre visiblement pas propre ?",answers:["Jamais","Oui en dépannage","Oui sans trop y penser","Oui et ça me dérange pas"],scores:[0,5,10,15],category:"👐"},
-    {q:"Tu t'es couché avec tes vêtements de la journée sans te changer ?",answers:["Jamais","Oui une fois très fatigué","Plusieurs fois","C'est habituel"],scores:[0,5,10,15],category:"😈"},
-    {q:"Tu as repoussé ta douche volontairement alors que tu étais disponible ?",answers:["Jamais","Oui parfois","Souvent","C'est fréquent"],scores:[0,5,10,15],category:"😈"},
+    {q:"Tu t'es déjà couché avec tes vêtements de la journée sans te changer ?",answers:["Jamais","Oui une fois très fatigué","Plusieurs fois","C'est habituel"],scores:[0,5,10,15],category:"😈"},
+    {q:"Combien de jours MAX tes affaires sont elles restées dans ton sac de sport ?",answers:["Je les retire direct","1 jour","entre 2 et 5 jours","Plus de 5 jours"],scores:[0,5,10,15],category:"😈"},
     {q:"C'est quoi ton record de jours sans douche ?",answers:["1 jour","2-3 jours","4-6 jours","1 semaine ou plus"],scores:[0,5,15,20],category:"🚿"},
     {q:"Tu portes tes chaussettes combien de jours maximum ?",answers:["1 jour","2 jours","3 jours","Plus"],scores:[0,5,15,20],category:"🚿"},
     {q:"Tu changes tes draps tous les combien ?",answers:["1 semaine","2 semaines","1 mois","Plus d'un mois"],scores:[0,5,15,20],category:"🧼"},
     {q:"Ta serviette de bain passe en machine tous les combien ?",answers:["Moins d'une semaine","2 semaines","1 mois","Plus"],scores:[0,5,15,20],category:"🧼"},
     {q:"Tu te laves les mains avant de cuisiner ?",answers:["Toujours","Parfois","Rarement","Jamais"],scores:[0,5,15,20],category:"👐"},
     {q:"Tu te brosses les dents combien de fois par jour ?",answers:["2 fois ou plus","1 fois","Parfois","Rarement"],scores:[0,5,15,20],category:"🦷"},
-    {q:"Tu as déjà pété dans ta main pour sentir l'odeur ensuite ?",answers:["Non jamais","Une fois par curiosité","Oui parfois","Oui régulièrement"],scores:[0,5,15,20],category:"💩"},
+    {q:"As tu déjà pratiqué la technique dite de la coupole (pété dans ta main sour forme d'une coupole pour sentir l'odeur ensuite) ?",answers:["Non jamais","Peut être une fois par curiosité","Oui parfois","Oui régulièrement"],scores:[0,5,15,20],category:"💩"},
     {q:"Les gens autour de toi t'ont déjà fait une remarque sur l'odeur de tes pieds ?",answers:["Jamais","Une fois","Parfois","Souvent"],scores:[0,5,15,20],category:"💩"},
     {q:"C'est quoi ton record de jours d'affilée sans douche ?",answers:["1 jour","2-3 jours","4-6 jours","1 semaine ou plus"],scores:[0,10,20,25],category:"🚿"},
     {q:"Tu as déjà retourné un sous-vêtement pour le remettre ?",answers:["Jamais","Une fois en dépannage","Parfois","C'est une habitude"],scores:[0,10,20,25],category:"🚿"},
@@ -245,6 +245,7 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Serveur sur port ${PORT}`);
 });
+
 
 
 
