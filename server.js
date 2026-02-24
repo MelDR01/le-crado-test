@@ -72,22 +72,38 @@ let room = {
 io.on('connection', (socket) => {
   console.log('Joueur connecté:', socket.id);
 
-  socket.on('join', (name) => {
-    if (!room.hostId) room.hostId = socket.id;
+socket.on('join', (name) => {
+  if (!room.hostId) room.hostId = socket.id;
 
-    room.players[socket.id] = {
-      name,
-      score: 0,
-      avatar: `avatars/avatar${Math.floor(Math.random() * 10) + 1}.png`,
-      validated: false,
-      answer: -1,
-      afkCount: 0
-    };
+  room.players[socket.id] = {
+    name,
+    score: 0,
+    avatar: `avatars/avatar${Math.floor(Math.random() * 10) + 1}.png`,
+    validated: true, // true pour ne pas bloquer la question en cours
+    answer: -1,
+    afkCount: 0
+  };
 
-    socket.emit('joined', { id: socket.id, players: room.players });
-    io.emit('playersUpdate', room.players);
-    socket.emit('isHost', socket.id === room.hostId);
-  });
+  socket.emit('joined', { id: socket.id, players: room.players });
+  io.emit('playersUpdate', room.players);
+  socket.emit('isHost', socket.id === room.hostId);
+
+  // Si partie en cours → envoie la question actuelle au nouveau joueur
+  if (room.state === 'answering') {
+    socket.emit('startGame', {
+      question: room.questions[room.currentQuestion],
+      index: room.currentQuestion,
+      total: room.questions.length
+    });
+  } else if (room.state === 'revealing') {
+    socket.emit('startGame', {
+      question: room.questions[room.currentQuestion],
+      index: room.currentQuestion,
+      total: room.questions.length
+    });
+  }
+});
+
 
   socket.on('startGame', () => {
     if (socket.id === room.hostId && room.state === 'lobby') {
@@ -229,5 +245,6 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Serveur sur port ${PORT}`);
 });
+
 
 
