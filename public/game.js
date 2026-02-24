@@ -1,4 +1,4 @@
-const socket = io();
+const socket = io({ transports: ['websocket', 'polling'] });
 let playerId = null;
 let isHost = false;
 let currentAnswer = -1;
@@ -343,3 +343,4 @@ document.getElementById('revealContinueBtn').onclick = () => {
   document.getElementById('revealScreen').style.display = 'none';
   document.getElementById('game').style.display = 'flex';
 };
+
