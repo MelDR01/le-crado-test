@@ -44,20 +44,20 @@ let room = {
     {q:"Tu te laves les mains avant de cuisiner ?",answers:["Toujours","Parfois","Rarement","Jamais"],scores:[0,5,15,20],category:"👐"},
     {q:"Tu te brosses les dents combien de fois par jour ?",answers:["2 fois ou plus","1 fois","Parfois","Rarement"],scores:[0,5,15,20],category:"🦷"},
     {q:"As tu déjà pratiqué la technique dite de la coupole (pété dans ta main sour forme d'une coupole pour sentir l'odeur ensuite) ?",answers:["Non jamais","Peut être une fois par curiosité","Oui parfois","Oui régulièrement"],scores:[0,5,15,20],category:"💩"},
-    {q:"Les gens autour de toi t'ont déjà fait une remarque sur l'odeur de tes pieds ?",answers:["Jamais","Une fois","Parfois","Souvent"],scores:[0,5,15,20],category:"💩"},
+    {q:"Les gens autour de toi t'ont déjà fait une remarque sur l'odeur de tes pieds ?",answers:["Jamais","Ca a du arriver","Parfois","Oui je pue des pieds"],scores:[0,5,15,20],category:"💩"},
     {q:"C'est quoi ton record de jours d'affilée sans douche ?",answers:["1 jour","2-3 jours","4-6 jours","1 semaine ou plus"],scores:[0,10,20,25],category:"🚿"},
     {q:"Tu as déjà retourné un sous-vêtement pour le remettre ?",answers:["Jamais","Une fois en dépannage","Parfois","C'est une habitude"],scores:[0,10,20,25],category:"🚿"},
     {q:"Tu utilises la même éponge de cuisine depuis combien de temps ?",answers:["Moins d'1 mois","2-3 mois","Plus de 6 mois","Je sais plus depuis quand"],scores:[0,10,20,25],category:"🧼"},
     {q:"Tu changes de brosse à dents tous les combien ?",answers:["Tous les 3 mois","Tous les 6 mois","Une fois par an","Je sais plus"],scores:[0,10,20,25],category:"🦷"},
     {q:"Tu as dormi sans draps parce que tu n'avais pas changé le lit ?",answers:["Non","Oui une nuit","Plusieurs nuits de suite","C'est souvent"],scores:[0,10,20,25],category:"😈"},
-    {q:"Tu as trouvé de la moisissure sur de la vaisselle et tu l'as quand même utilisée ?",answers:["Non jamais","Oui une fois","Oui plusieurs fois","Oui sans hésiter"],scores:[0,10,20,30],category:"🧼"},
+    {q:"As tu déjà laissé ta vaisselle trainer au point de la faire moisire ?",answers:["Non jamais","Oui une fois","Oui plusieurs fois","Il y en a actuellement"],scores:[0,10,20,30],category:"🧼"},
     {q:"Tu t'es endormi plusieurs nuits de suite sans te brosser les dents ?",answers:["Non jamais","Oui une fois","Oui plusieurs fois","Oui c'est arrivé récemment"],scores:[0,10,20,30],category:"🦷"},
     {q:"Tu as remis un slip sale parce que tu n'avais plus rien de propre ?",answers:["Jamais","Une fois en voyage","Plusieurs fois","C'est arrivé récemment"],scores:[0,10,20,30],category:"💩"},
-    {q:"Tu es déjà sorti sans t'essuyer les fesses parce que tu avais la flemme ?",answers:["Jamais","Une fois en urgence","Quelques fois","Récemment"],scores:[0,15,25,35],category:"💩"},
-    {q:"Tu t'es déjà gratté les fesses et senti le doigt ?",answers:["Non","Une fois par curiosité","Oui parfois","Oui et j'assume"],scores:[0,10,25,35],category:"💩"},
+    {q:"Es tu déjà sorti des toilettes apres un caca sans t'essuyer ?",answers:["Jamais","Une fois en urgence","Quelques fois","Récemment"],scores:[0,15,25,35],category:"💩"},
+    {q:"As tu déjà graotuillé vers le trou du cul pour ensuite sentir le fruit de ta récolte en rapprochant tes doigts de ton nez ?",answers:["Non","Une fois par curiosité","Oui parfois","Oui, j'assume aimer ca"],scores:[0,10,25,35],category:"💩"},
     {q:"Tu as déjà porté le même slip plus de 3 jours d'affilée ?",answers:["Jamais","Oui en dépannage","Oui sans raison","Oui plusieurs fois"],scores:[0,15,25,35],category:"😈"},
-    {q:"Tu as déjà uriné dans une bouteille pour éviter d'aller aux toilettes ?",answers:["Non jamais","Oui en voiture/trajet","Oui chez moi","Oui et c'est pratique"],scores:[0,15,30,40],category:"😈"},
-    {q:"Tu as déjà utilisé un vêtement comme papier toilette en urgence ?",answers:["Non jamais","Oui une fois en vraie urgence","Oui et c'était calculé","Oui plusieurs fois"],scores:[0,15,30,45],category:"😈"}
+    {q:"T'as déjà pissé dans une bouteille pour éviter d'aller aux toilettes ?",answers:["Non jamais","Oui en voiture/trajet","Oui chez moi","Oui et c'est pratique"],scores:[0,15,30,40],category:"😈"},
+    {q:"Fautre de PQ, as tu déjà utilisé un vêtement ou tout autre objet insolite pour t'essuyer ?",answers:["Non jamais","Oui une fois en vraie urgence","Oui et c'était calculé","Oui plusieurs fois"],scores:[0,15,30,45],category:"😈"}
   ],
   ranks: [
     {max:60,      name:"🧼 Propre",           punchline:"Tu es soit très propre, soit tu as menti"},
@@ -245,6 +245,7 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Serveur sur port ${PORT}`);
 });
+
 
 
 
