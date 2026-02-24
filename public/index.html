@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Le Crado Test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOBBY -->
+  <div id="lobby" class="screen">
+    <h1>🧼 Le Crado Test</h1>
+    <p class="subtitle">Test d'hygiène multijoueur</p>
+    <input id="nameInput" placeholder="Ton pseudo" maxlength="12" autocomplete="off">
+    <br>
+    <button id="joinBtn">Rejoindre</button>
+    <div id="playersList" style="margin-top:20px"></div>
+    <button id="startBtn" style="display:none; margin-top:20px">🚀 Démarrer le jeu</button>
+  </div>
+
+  <!-- JEU -->
+  <div id="game" class="screen" style="display:none">
+    <div id="questionContainer">
+      <div id="category"></div>
+      <div id="questionCounter">Question 1 / 39</div>
+      <div id="answeredCounter">0 / 0 ont répondu</div>
+      <div id="timer">30</div>
+      <h2 id="question"></h2>
+      <div id="answers"></div>
+      <button id="validateBtn" disabled>Valider</button>
+      <button id="nextBtn" style="display:none">Suivant ➡️</button>
+    </div>
+  </div>
+
+  <!-- REVEAL MI-PARCOURS ET FINAL -->
+  <div id="revealScreen">
+    <h2 id="revealSubtitle">Mi-parcours</h2>
+    <h1 id="revealTitle">🏆 Classement</h1>
+    <div id="revealList"></div>
+    <button id="revealContinueBtn">Continuer ➡️</button>
+  </div>
+
+  <!-- FIN (fallback si besoin) -->
+  <div id="endScreen" class="screen" style="display:none">
+    <h1>🏆 Fin du Crado Test !</h1>
+    <div id="finalRanking"></div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
