@@ -158,17 +158,19 @@ io.on('connection', (socket) => {
   });
 
   socket.on('continueAfterMidReveal', () => {
-    if (socket.id === room.hostId && room.state === 'midreveal') {
-      room.currentQuestion++;
-      room.state = 'answering';
-      resetAnswers();
-      io.emit('nextQuestion', {
-        question: room.questions[room.currentQuestion],
-        index: room.currentQuestion,
-        total: room.questions.length
-      });
-    }
-  });
+  if (socket.id === room.hostId && room.state === 'midreveal') {
+    room.currentQuestion++;
+    room.state = 'answering';
+    resetAnswers();
+    io.emit('continueGame'); // ← broadcast à TOUS
+    io.emit('nextQuestion', {
+      question: room.questions[room.currentQuestion],
+      index: room.currentQuestion,
+      total: room.questions.length
+    });
+  }
+});
+
 
   socket.on('disconnect', () => {
     delete room.players[socket.id];
@@ -227,4 +229,5 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Serveur sur port ${PORT}`);
 });
+
 
