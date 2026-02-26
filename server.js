@@ -31,6 +31,7 @@ let room = {
     {q:"As tu déjà graotuillé vers le trou du cul pour ensuite sentir le fruit de ta récolte en rapprochant tes doigts de ton nez ?",answers:["Non","Une fois par curiosité","Oui parfois","Oui, j'assume aimer ca"],scores:[0,10,25,35],category:"💩"},
     {q:"Tu as déjà porté le même slip plus de 3 jours d'affilée ?",answers:["Jamais","Oui en dépannage","Oui sans raison","Oui plusieurs fois"],scores:[0,15,25,35],category:"😈"},
     {q:"T'as déjà pissé dans une bouteille pour éviter d'aller aux toilettes ?",answers:["Non jamais","Oui en voiture/trajet","Oui chez moi","Oui et c'est pratique"],scores:[0,15,30,40],category:"😈"},
+    {q:"Se mettre sur/dans son lit avec les vetements de la journée ?",answers:["Non jamais","Oui parfois","Oui souvent","Oui c'est une habitude"],scores:[0,15,30,40],category:"😈"},
     {q:"Fautre de PQ, as tu déjà utilisé un vêtement ou tout autre objet insolite pour t'essuyer ?",answers:["Non jamais","Oui une fois en vraie urgence","Oui et c'était calculé","Oui plusieurs fois"],scores:[0,15,30,45],category:"😈"}
   ],
   ranks: [
@@ -219,6 +220,7 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Serveur sur port ${PORT}`);
 });
+
 
 
 
